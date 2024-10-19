@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Retention Test</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        #game-over-message {
+            display: none; /* Initially hidden */
+            color: black; /* Adjust as needed */
+        }
+
+        #incorrect-answer-box {
+            display: none; /* Initially hidden */
+            background-color: white; /* White background for the box */
+            padding: 10px;
+            border: 1px solid black; /* Adjust border as needed */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="centered-heading">Digit Retention Test</h1>
+    <div id="game-container">
+        <button id="home-button" onclick="window.location.href='menu.html'">
+            <img src="home-icon.png" alt="Home">
+        </button>
+        <div id="high-score">High Score: <span id="highScoreValue">0</span></div>
+        <div id="question" style="display: none;">Question will appear here</div>
+        <input type="text" id="answer" placeholder="Type your answer here" style="display: none;">
+        <button onclick="submitAnswer()" id="submit-btn" style="display: none;">Submit</button>
+        <button id="start-btn" onclick="startGame()">Start Game</button>
+
+        <!-- Game Over Message -->
+        <div id="game-over-message"></div>
+
+        <!-- Incorrect Answer Box -->
+        <div id="incorrect-answer-box"></div>
+
+        <!-- End game buttons -->
+        <div id="end-game-buttons" style="display: none;">
+            <button id="return-home-btn" onclick="returnHome()">Back to Main Menu</button>
+            <button id="play-again-btn" onclick="playAgain()">Play Again</button>
+        </div>
+    </div>
+    <script src="digit-retention-test.js"></script>
+</body>
+</html>

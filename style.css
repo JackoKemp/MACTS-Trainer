@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1b6cc8; /* Background color for non-menu pages */
+    margin: 0;
+    padding: 0;
+}
+
+/* Background for menu.html */
+.menu-background {
+    background-image: url(background1.png); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the whole page */
+    background-position: center top; /* Center the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+h1 {
+    font-size: 60px;
+    color: #333;
+}
+
+.centered-heading {
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+/* Game options container */
+#game-options {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center content horizontally */
+    margin-top: 20px; /* Space from the heading */
+}
+
+/* Select game container positioning */
+#select-game-container {
+    position: absolute; /* Positioning it absolutely */
+    bottom: 600px; /* Adjust distance from the bottom */
+    left: 100px; /* Adjust distance from the left */
+    text-align: left; /* Align text to the left */
+}
+
+#select-game-container h2 {
+    margin: 0; /* Remove margin for better alignment */
+}
+
+/* Button styles */
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    margin: 5px; /* Add some spacing between buttons */
+    cursor: pointer;
+}
+
+/* High score and other text styles */
+#high-score, #timer, #question {
+    margin: 10px 0; /* Space around these elements */
+    font-size: 30px; /* Adjust font size */
+}
+
+/* Input field styles */
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px; /* Set a width for the input */
+}
+
+/* Home button positioning */
+#home-button {
+    position: absolute; /* Position the button absolutely */
+    top: 10px; /* Distance from the top */
+    left: 10px; /* Distance from the left */
+    width: 80px; /* Set width to match the image */
+    height: 80px; /* Set height to match the image */
+}
+
+#home-button img {
+    width: 100%; /* Make the image take the full size of the button */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+/* Centering game elements on the game page */
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+    margin-top: 30px; /* Space from the top */
+}
+.fade {
+    transition: opacity 0.5s ease;
+    opacity: 0; /* Start with opacity 0 for fade-out */
+}
+#end-game-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#end-game-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#game-over-message {
+    font-size: 1.5em; /* Increase the font size */
+    margin: 20px 0; /* Add some space around the message */
+    color: red; /* Make the text red for visibility */
+    text-align: center; /* Center the text */
+}
