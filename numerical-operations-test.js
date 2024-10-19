@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function() {
 function startGame() {
     score = 0;
     currentQuestion = 0;
-    totalGameTime = 60;
     answers = [];
 
     // Hide the high score when the game starts
