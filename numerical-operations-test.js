@@ -192,7 +192,7 @@ function addEndGameButtons() {
     const buttonsDiv = document.createElement("div");
     buttonsDiv.style.marginTop = "20px"; // Add margin to make sure buttons aren't hidden
     
-    let buttonsHtml = `<button onclick="window.location.href='menu.html'">Back to Main Menu</button>`;
+    let buttonsHtml = `<button onclick="window.location.href='index.html'">Back to Main Menu</button>`;
     buttonsHtml += `<button onclick="window.location.href='numerical-operations-test.html'">Play Again</button>`;
     
     buttonsDiv.innerHTML = buttonsHtml;
