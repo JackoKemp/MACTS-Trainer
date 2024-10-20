@@ -32,31 +32,36 @@ function startGame() {
     gameActive = true; // Set game as active
     nextSequence(); // Start the game sequence
 
-    // Add event listener for Enter key
+    // Attach the event listener to the submit button
+    document.getElementById('submit-btn').onclick = submitAnswer; // Use onclick property
+
+    // Attach the event listener for the Enter key on the input field
     const answerInput = document.getElementById('answer');
-    answerInput.value = ''; // Clear input field when starting
-    answerInput.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-            event.preventDefault(); // Prevent form submission if inside a form
-            submitAnswer(); // Call the submit function
-        }
-    });
+    answerInput.addEventListener('keypress', handleEnterKey); // Use a separate function for Enter key handling
 }
+
+function handleEnterKey(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent default form submission if inside a form
+        submitAnswer(); // Trigger answer submission when Enter is pressed
+    }
+}
+
 
 function nextSequence() {
-    console.log("Current sequence length:", sequenceLength); // Debugging
+    if (!gameActive) return; // Prevent generating new sequences if game is inactive
 
-    // Generate a new sequence of random digits of length equal to sequenceLength
-    currentSequence = [];
+    currentSequence = []; // Clear the current sequence before generating a new one
     for (let i = 0; i < sequenceLength; i++) {
-        // Generate a random digit between 0 and 9
-        const randomDigit = Math.floor(Math.random() * 10); // Generates a number between 0 and 9
-        currentSequence.push(randomDigit);
+        const randomDigit = Math.floor(Math.random() * 10); // Generate a random digit (0-9)
+        currentSequence.push(randomDigit); // Add the digit to the sequence
     }
-    
-    console.log("Current sequence:", currentSequence); // Debugging
-    showSequence(); // Call to show the sequence
+
+    console.log("New random sequence:", currentSequence); // Debugging
+    showSequence(); // Display the sequence to the player
 }
+
+
 
 function showSequence() {
     const questionElement = document.getElementById('question');
@@ -143,9 +148,9 @@ function returnHome() {
 
 function resetGame() {
     console.log("Resetting game..."); // Debugging
-    // Logic to reset the game (score, sequence, etc.)
     currentScore = 0;
     sequenceLength = 1; // Reset sequence length
+    currentSequence = []; // Clear the sequence for a fresh start
     document.getElementById('high-score').style.display = 'block'; // Show high score
     document.getElementById('question').style.display = 'none'; // Hide question
     document.getElementById('answer').style.display = 'none'; // Hide answer input
@@ -157,7 +162,14 @@ function resetGame() {
     questionElement.style.color = ''; // Reset to default color
     console.log("Question color reset to:", questionElement.style.color); // Debugging
     questionElement.textContent = ''; // Clear previous question text
+
+    // Remove the keypress event listener to prevent multiple bindings
+    const answerInput = document.getElementById('answer');
+    answerInput.removeEventListener('keypress', handleEnterKey); // Properly remove the Enter key listener
 }
+
+
+
 
 // Load high score on page load
 window.onload = loadHighScore;
