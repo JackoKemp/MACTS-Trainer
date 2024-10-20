@@ -138,7 +138,7 @@ function playAgain() {
 
 function returnHome() {
     // Redirect to main menu
-    window.location.href = 'menu.html';
+    window.location.href = 'index.html';
 }
 
 function resetGame() {
