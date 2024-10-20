@@ -139,7 +139,11 @@ function playAgain() {
     gameActive = true; // Reset game active state
     document.getElementById('end-game-buttons').style.display = 'none'; // Hide end game buttons
     document.getElementById('start-btn').style.display = 'block'; // Show start game button
+
+    // Clear the answer input field
+    document.getElementById('answer').value = ''; // Reset the input field
 }
+
 
 function returnHome() {
     // Redirect to main menu
